@@ -1,4 +1,4 @@
 const Test = () => {
     return 'man besii'
 }
-export default Test;
+export default { Test };
