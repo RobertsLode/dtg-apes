@@ -1,0 +1,685 @@
+/* COLORS */
+$dark: rgb(39, 51, 59); //#2F363D 
+$darker: rgb(99, 104, 110); //#63686E
+$default: rgb(194, 196, 198); //#C1C3C5
+$lighter: rgb(223, 225, 226); //#E0E1E2 TABLE HEADER
+$light: rgb(245, 245, 245); //#F5F5F5 BACKGROUND
+
+$primary: rgb(170, 200, 252); //#ABC9FD BUTTONS, ACCENTS
+$primary_50: rgb(213, 228, 254); //#D5E4FE
+$primary_25: rgb(235, 241, 255); //#EAF1FF
+
+$danger: rgb(252, 76, 61); //#FC4C3D
+$danger_50: rgb(255, 228, 226); //#FFE4E2
+
+$success: rgb(142, 179, 61); //#8EB33D
+$success_50: rgb(232, 240, 216); //#E8F0D8
+
+// NEW COLORS //
+
+// $dark: rgb(39, 51, 59); //#2F363D TEXT, ICONS
+// $darker: rgb(99, 104, 110); //#63686E
+// $default: rgb(194, 196, 198); //#C1C3C5
+// $lighter: rgb(223, 225, 226); //#E0E1E2 TABLE HEADER
+// $light: rgb(245, 245, 245); //#F5F5F5 BACKGROUND
+
+// $primary: rgb(170, 200, 252); //#ABC9FD BUTTONS, ACCENTS
+// $primary_50: rgb(213, 228, 254); //#D5E4FE
+// $primary_25: rgb(235, 241, 255); //#EAF1FF
+
+// $danger: rgb(252, 76, 61); //#FC4C3D
+// $danger_50: rgb(255, 228, 226); //#FFE4E2
+
+// $success: rgb(142, 179, 61); //#8EB33D
+// $success_50: rgb(232, 240, 216); //#E8F0D8
+
+// NEW COLORS //
+
+
+////// DARK //////
+.wh-bg-dark {
+  background-color: $dark;
+}
+
+.wh-text-dark {
+  color: $dark;
+}
+
+.text-hover-dark:hover {
+  transition: all .2s ease-in-out;
+  color: $dark !important;
+}
+
+//// DARKER //////
+// ! NEW HOVER
+.wh-btn-darker:hover {
+  outline: 4px solid $darker;
+}
+
+// ! NEW HOVER
+
+// ! NEW ACTIVE
+.wh-btn-darker:active {
+  background-color: $lighter;
+  color: $darker;
+}
+
+// ! NEW ACTIVE
+.wh-bg-darker {
+  background-color: $darker;
+}
+
+.wh-text-darker {
+  color: $darker;
+}
+
+.wh-btn-darker {
+  background-color: $darker;
+  color: $light;
+}
+
+.bg-hover-darker:hover {
+  transition: all .2s ease-in-out;
+  background-color: $default;
+}
+
+.text-hover-darker:hover {
+  transition: all .2s ease-in-out;
+  color: $darker;
+}
+
+////// DEFAULT ////// 
+// ! NEW HOVER
+.wh-btn-default:hover {
+  outline: 4px solid rgb(73, 107, 131);
+}
+
+// ! NEW HOVER
+
+// ! NEW ACTIVE
+.wh-btn-default:active {
+  background-color: rgb(73, 107, 131);
+}
+
+// ! NEW ACTIVE
+.wh-bg-default {
+  background-color: $default;
+}
+
+.wh-text-default {
+  color: $default;
+}
+
+.wh-btn-default {
+  background-color: $dark;
+  color: $light;
+}
+
+.text-hover-default:hover {
+  transition: all .2s ease-in-out;
+  color: $default !important;
+}
+
+////// LIGHTER //////
+// ! NEW HOVER
+.wh-btn-lighter:hover {
+  outline: 4px solid rgb(161, 161, 161);
+}
+
+// ! NEW HOVER
+
+// ! NEW ACTIVE
+.wh-btn-lighter:active {
+  background-color: $default;
+}
+
+// ! NEW ACTIVE
+
+// ! NEW BG COLOR
+.wh-btn-lighter {
+  background-color: $lighter;
+}
+
+// ! NEW BG COLOR
+
+.wh-bg-lighter {
+  background-color: $lighter;
+}
+
+.wh-text-lighter {
+  color: $lighter;
+}
+
+.text-hover-lighter:hover {
+  transition: all .2s ease-in-out;
+  color: $lighter;
+}
+
+////// LIGHT //////
+//! NEW ACTIVE 
+.wh-btn-light:active {
+  background-color: $lighter;
+}
+
+//! NEW ACTIVE 
+//! NEW HOVER
+.wh-btn-light:hover {
+  outline: 4px solid $lighter;
+}
+
+//! NEW HOVER
+.wh-bg-light {
+  background-color: $light;
+}
+
+.wh-text-light {
+  color: $light;
+}
+
+.text-hover-light:hover {
+  transition: all .2s ease-in-out;
+  color: $light;
+}
+
+////// SUCCESS //////
+.wh-bg-success {
+  background-color: $success;
+}
+
+//! NEW ACTIVE
+.wh-btn-success:active {
+  background-color: rgb(188, 221, 123)
+}
+
+//! NEW ACTIVE
+.wh-text-success {
+  color: $success;
+}
+
+.wh-btn-success {
+  background-color: $success;
+  color: $dark;
+}
+
+//! NEW HOVER
+.wh-btn-success:hover {
+  outline: 4px solid rgb(188, 221, 123) !important;
+}
+
+//! NEW HOVER
+
+.wh-bg-success-50 {
+  background-color: $success_50;
+}
+
+.wh-text-success-50 {
+  color: $success_50;
+}
+
+.text-hover-success:hover {
+  transition: all .2s ease-in-out;
+  color: $success;
+}
+
+////// DANGER //////
+//! NEW ACTIVE
+.wh-btn-danger:active {
+  background-color: rgb(209, 144, 144) !important;
+}
+
+//! NEW ACTIVE
+.wh-bg-danger {
+  background-color: $danger !important;
+}
+
+.wh-text-danger {
+  color: $danger;
+}
+
+.wh-btn-danger {
+  background-color: $danger;
+  color: $dark;
+}
+
+.wh-btn-danger:hover {
+  background-color: $danger_50;
+
+}
+
+.wh-bg-danger-50 {
+  background-color: $danger_50;
+}
+
+.wh-text-danger-50 {
+  color: $danger_50;
+}
+
+.text-hover-danger:hover {
+  color: $danger;
+
+}
+
+////// PRIMARY //////
+//! NEW ACTIVE
+.wh-btn-primary:active {
+  background-color: $lighter !important;
+}
+
+//! NEW ACTIVE
+.wh-bg-primary {
+  background-color: $primary;
+}
+
+.wh-text-primary {
+  color: $primary;
+}
+
+.wh-btn-primary {
+  background-color: $primary;
+  color: $dark;
+}
+
+.wh-btn-primary:hover {
+  background-color: $primary_50;
+  color: $dark;
+}
+
+.wh-bg-primary-50 {
+  background-color: $primary_50;
+}
+
+.wh-text-primary-50 {
+  color: $danger_50;
+}
+
+.wh-bg-primary-25 {
+  background-color: $primary_25;
+}
+
+.wh-text-primary-25 {
+  color: $primary_25;
+}
+
+////// BUTTONS //////
+.wh-btn {
+  display: flex;
+  align-items: center;
+  border-radius: 22px;
+  height: 44px;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Ruda';
+  font-weight: 800;
+  padding: 0 22px 0 22px;
+  border: none;
+  transition: .1s all ease-in-out;
+
+  &:disabled {
+    background-color: $lighter;
+    color: $darker;
+    cursor: default;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.wh-btn:disabled {
+  background-color: $lighter;
+  color: $darker;
+  cursor: default;
+}
+
+.wh-btn-toggle {
+  color: $dark;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: none;
+  outline: none;
+}
+
+.wh-btn-toggle:hover {
+  color: $dark;
+  background-color: #979b9e;
+}
+
+wh-btn-toggle:focus,
+wh-btn-toggle:active {
+  border: none;
+}
+
+////// NAV ////////
+.nav-link.active {
+  background-color: #979b9e;
+  color: $dark;
+  ;
+}
+
+.nav-link:focus {
+  color: $dark;
+}
+
+
+////// TABLE //////
+.wh-table {
+  background-color: $light;
+}
+
+.wh-table tbody {
+  border: none !important;
+}
+
+.wh-table tbody>tr {
+  border-top: solid 1px $lighter;
+}
+
+.wh-table td,
+th {
+  border-style: none;
+}
+
+.wh-table thead th {
+  background-color: $default;
+  font-weight: normal;
+  height: 44px;
+  vertical-align: middle;
+}
+
+.wh-table td {
+  background-color: #fff;
+}
+
+
+//KKADS RANDOM ::BERORE TAISA ATSTARPES
+// .wh-table tbody:before {
+//     content:".";
+//     background-color: $lighter;
+//     display:table-cell;
+//     line-height:8px;
+//     text-indent:-99999px;
+// }
+
+.wh-table th:first-child {
+  border-radius: 14px 0 0 14px;
+}
+
+.wh-table th:last-child {
+  border-radius: 0 14px 14px 0;
+}
+
+
+// KREISAIS AUGŠĒJAIS STŪRIS
+.wh-table tr:nth-child(1) td:first-child {
+  border-radius: 14px 0 0 0;
+}
+
+// LABAIS AUGŠĒJAIS STŪRIS
+.wh-table tr:nth-child(1) td:last-child {
+  border-radius: 0 14px 0 0; // 0 14px 0 0
+}
+
+// KREISAIS APAKŠĒJAIS STŪRIS
+.wh-table tr:last-child td:first-child {
+  border-radius: 0 0 0 14px;
+}
+
+// LABAIS APAKŠĒJAIS STŪRIS
+.wh-table tr:last-child td:last-child {
+  border-radius: 0 0 14px 0;
+}
+
+// //-------------------------------------------------------------------
+// EXPANDED TBODY STŪRI
+.wh-table tbody tr.expanded:first-child td:first-child {
+  border-radius: 14px 0 0 0;
+}
+
+.wh-table tbody tr.expanded:first-child td:last-child {
+  border-radius: 0 14px 0 0;
+}
+
+.wh-table tbody tr.expanded:last-of-type td:first-child {
+  border-radius: 0 0 0 14px;
+}
+
+.wh-table tbody tr.expanded:last-of-type td:last-child {
+  border-radius: 0 0 14px 0;
+}
+
+//NOT-EXPANDED TBODY STŪRI
+.wh-table tbody tr.not--expanded:first-child td:first-child {
+  border-radius: 14px 0 0 14px;
+  transition-delay: 0.25s;
+}
+
+.wh-table tbody tr.not--expanded:first-child td:last-child {
+  border-radius: 0 14px 14px 0;
+  transition-delay: 0.25s;
+}
+
+.wh-table tbody tr:last-of-type td:first-child {
+  border-radius: 0 0 0 14px;
+}
+
+.wh-table tbody tr:last-of-type td:last-child {
+  border-radius: 0 0 14px 0;
+
+}
+
+//-------------------------------------------------------------------
+
+
+// JA IR TIKAI VIENA RINDA
+.wh-table tr:only-child>td:first-child {
+  border-radius: 14px 0 0 14px;
+}
+
+.wh-table tr:only-child>td:last-child {
+  border-radius: 0 14px 14px 0;
+}
+
+.wh-table-hover>tbody>tr:hover td {
+  transition: .1s all ease-in-out;
+  background-color: $light;
+}
+
+h1 {
+  color: $dark;
+}
+
+////// DROPDOWN ///////
+.wh-dropdown-toggle::after {
+  display: none;
+}
+
+.wh-dropdown-toggle {
+  transition: .1s ease-in-out;
+}
+
+.wh-dropdown-toggle.show {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.wh-dropdown-menu {
+  min-width: 0;
+  border: 0;
+  margin-top: -10px !important;
+  animation: fadeIn .35s;
+  background-color: transparent;
+}
+
+.wh-dropdown-menu>label {
+  padding: 3px 0 3px 0;
+  cursor: pointer;
+}
+
+.wh-dropdown-menu label:last-child {
+  padding-bottom: 14px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.wh-dropdown-menu .dropdown-item:focus,
+.dropdown-item:hover {
+  background-color: $darker;
+  color: $lighter;
+}
+
+///// FORMS //////
+
+.wh-form {
+  border-radius: 14px;
+}
+
+.wh-form-control {
+  height: 44px;
+  padding-left: 20px;
+  border-radius: 12px;
+  border: none;
+  position: relative;
+  z-index: 1;
+  border: 1px solid #c2c4c6;
+}
+
+.wh-form-control:focus {
+  box-shadow: none;
+}
+
+.invalid-feedback {
+  margin-top: -10px;
+  padding: 15px 10px 5px 20px;
+  background-color: $danger-50;
+  color: red;
+  position: relative;
+  z-index: 0;
+  word-wrap: break-word;
+  font-weight: normal;
+  border-radius: 0px 0px 14px 14px;
+}
+
+.valid-feedback {
+  margin-top: -10px;
+  padding: 15px 10px 5px 20px;
+  background-color: $success-50;
+  color: green;
+  position: relative;
+  z-index: 0;
+  font-weight: normal;
+  word-wrap: break-word;
+  border-radius: 0px 0px 14px 14px;
+}
+
+.required:before {
+  content: "* ";
+  color: red;
+}
+
+/////// ANIMATIONS ///////
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/////// STATUS MESSAGE ///////
+.wh-alert {
+  border-radius: 20px;
+}
+
+.wh-alert.error {
+  background-color: $danger_50;
+  color: red;
+}
+
+.wh-alert.success {
+  background-color: $success_50;
+  color: green;
+}
+
+.wh-alert.waiting {
+  background-color: $primary_25;
+  color: $primary;
+}
+
+/////// MODAL ///////
+
+.wh-modal {
+  border-radius: 14px;
+  border: none;
+  background-color: $lighter;
+}
+
+.wh-modal .modal-header,
+.modal-footer,
+.modal-body {
+  border: none;
+  background-color: $lighter;
+}
+
+.wh-modal .modal-header {
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.wh-modal .modal-footer {
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.btn-close {
+  background: transparent url("./uploads/times-solid.svg") center/1em auto no-repeat;
+  margin: -2rem -.5rem -.5rem auto !important;
+  transition: all .3s ease;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@media print {
+
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  @media (min-width: 450px) {
+    .col-print-sm-6 {
+      width: 50% !important;
+      overflow: hidden;
+    }
+  }
+}
+
+// .wh-alert.error {
+//   color: #cc0033;
+//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+//   font-size: 13px;
+//   font-weight: bold;
+//   line-height: 20px;
+//   text-shadow: 1px 1px rgba(250,250,250,.3);
+// }
+// .status-text.waiting {
+//   color: #e09312;
+//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+//   font-size: 13px;
+//   font-weight: bold;
+//   line-height: 20px;
+//   text-shadow: 1px 1px rgba(250,250,250,.3);
+// }
+// .status-text.success {
+//   color: #008000;
+//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+//   font-size: 13px;
+//   font-weight: bold;
+//   line-height: 20px;
+//   text-shadow: 1px 1px rgba(250,250,250,.3);
+// }

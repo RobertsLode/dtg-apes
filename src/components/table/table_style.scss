@@ -1,0 +1,87 @@
+@import "./dtgStyle.scss";
+
+body * {
+  padding: 0px;
+  margin: 0px;
+}
+
+.svg {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: transparent;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: $primary_50;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: $default;
+  }
+}
+
+.slide {
+  clear: both;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  text-align: center;
+  transition: height .4s ease;
+}
+
+.table {
+  border-collapse: collapse;
+  min-width: 1100px;
+  max-width: 1500px;
+  border-spacing: 8px 0px;
+  table-layout: auto;
+  font-family: 'Ruda';
+
+}
+
+.tbody tr td div {
+  max-height: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: max-height 0.3s, padding 0.3s;
+}
+
+tr.active td div {
+  max-height: 100px;
+  padding: 10px 0px;
+  transition: max-height 0.6s, padding 0.6s;
+}
+
+.visually--hidden {
+  visibility: collapse;
+  transition: max-height 0.6s, padding 0.6s, visibility 0.25s;
+}
+
+.toggle {
+  width: 44px;
+}
+
+.td--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+}
+
+.tr--bold {
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+}
+
+.table--break {
+  height: 8px;
+}
