@@ -14,7 +14,7 @@ export default [
             },
             {
                 file: 'dist/index.es.js',
-                format: 'es',
+                format: 'esm',
                 exports: 'named',
             }
         ],
