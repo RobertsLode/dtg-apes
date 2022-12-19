@@ -35,5 +35,5 @@ Table component structure:
           ]
         }
       />
-      ```asd
+      ```
       
