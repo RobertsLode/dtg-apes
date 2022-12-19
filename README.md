@@ -4,10 +4,10 @@ For now only one (in-progress) component is present in this package.
 
 Table component structure: 
       <Table
-        firstTitle={'pirmails title'}
-        secondTitle={'otrails title'}
-        thirdTitle={'trečiails title'}
-        fouthTitle={'ceturtas title'}
+        firstTitle={String}
+        secondTitle={String}
+        thirdTitle={String}
+        fouthTitle={String}
         data={
           [
             {
