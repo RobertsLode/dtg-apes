@@ -4,6 +4,7 @@ For now only one (in-progress) component is present in this package.
 <br />
 Table component structure: 
 <br />
+```
       <Table
       <br />
         firstTitle={String}
@@ -63,4 +64,5 @@ Table component structure:
         }
         <br />
       />
+      ```
       
