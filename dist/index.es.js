@@ -1,1 +1,1 @@
-const e=()=>React.createElement("div",null,"man besii");export{e as Test};
+import e from"react";const t=()=>e.createElement("div",null,"man besii");export{t as Test};
