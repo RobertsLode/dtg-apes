@@ -1,3 +1,4 @@
+import React from 'react';
 import LargeTableSlot from "./listItem/list_item.jsx";
 import "./table_style.scss";
 
