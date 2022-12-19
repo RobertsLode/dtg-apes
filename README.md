@@ -1,13 +1,19 @@
 Welcome to ape package!
 
 For now only one (in-progress) component is present in this package.
-
+<br />
 Table component structure: 
+<br />
       <Table
+      <br />
         firstTitle={String}
+        <br />
         secondTitle={String}
+        <br />
         thirdTitle={String}
+        <br />
         fouthTitle={String}
+        <br />
         data={
           [
             {
