@@ -1,3 +1,3 @@
-import Test from "./test";
-
-export default { Test };
+// import Test from "./test";
+// export default { Test };
+export * from './test.jsx';

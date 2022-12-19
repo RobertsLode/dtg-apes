@@ -1,7 +1,7 @@
 import LargeTableSlot from "./listItem/list_item.jsx";
 import "./table_style.scss";
 
-const Table = ({ firstTitle, secondTitle, thirdTitle, fouthTitle, data }) => {
+ export function Table({ firstTitle, secondTitle, thirdTitle, fouthTitle, data }) {
   return (
     <div>
       <table className="wh-table table tbody">
@@ -31,4 +31,3 @@ const Table = ({ firstTitle, secondTitle, thirdTitle, fouthTitle, data }) => {
     </div>
   );
 }
-export default Table;
