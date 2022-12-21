@@ -6,34 +6,41 @@ Table component structure:
 <br />
 ```
       <Table
-        firstTitle={String}
-        secondTitle={String}
-        thirdTitle={String}
-        fouthTitle={String}
-        data={
-          [
-            {
-              tableSlotFirstTitle: String
-              tableSlotSecondTitle: String,
-              tableSlotThirdTitle: String,
-              tableSlotFouthTitle: String,
-              details: [
-                {
-                  firstP: String,
-                  secondP: String,
-                  thirdP: String,
-                  fourthP: String,
-                },
-                {
-                ...
-                }
-              ]
-            },
-            {
-            ...
-            }
-          ]
-        }
+       data:{
+            [
+                  {
+                        tableSlotTotles: {
+                        id: String,
+                        names: [
+                                    {
+                                          name: String
+                                    },
+                                    ...
+                              ]
+                        },
+                        details: [
+                              {
+                                    id: String,
+                                    names: [
+                                          {
+                                                name: String
+                                          },
+                                          ...
+                                    ]
+                              }     
+                        ]
+                  },
+                  ...
+            ]
+       }
+       tHead={
+            [
+                  String,
+                  ...
+            ]
+       }
+       editClick={(id) => ...}
+       deleteClick={(id) => ...}
       />
       ```
       
