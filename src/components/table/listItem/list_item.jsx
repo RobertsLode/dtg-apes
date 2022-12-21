@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import Pencil from '../../../assets/p.png';
+import Trash from '../../../assets/trash.png';
 function LargeTableSlot({ details, editClick, deleteClick }) {
   const [visiblee, setVisiblee] = useState(false);
 
