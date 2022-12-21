@@ -1,4 +1,18 @@
-@import "./dtgStyle.scss";
+$dark: rgb(39, 51, 59); //#2F363D 
+$darker: rgb(99, 104, 110); //#63686E
+$default: rgb(194, 196, 198); //#C1C3C5
+$lighter: rgb(223, 225, 226); //#E0E1E2 TABLE HEADER
+$light: rgb(245, 245, 245); //#F5F5F5 BACKGROUND
+
+$primary: rgb(170, 200, 252); //#ABC9FD BUTTONS, ACCENTS
+$primary_50: rgb(213, 228, 254); //#D5E4FE
+$primary_25: rgb(235, 241, 255); //#EAF1FF
+
+$danger: rgb(252, 76, 61); //#FC4C3D
+$danger_50: rgb(255, 228, 226); //#FFE4E2
+
+$success: rgb(142, 179, 61); //#8EB33D
+$success_50: rgb(232, 240, 216); //#E8F0D8
 
 body * {
   padding: 0px;
@@ -16,12 +30,12 @@ body * {
   align-items: center;
 
   &:hover {
-    background-color: $primary_50;
+    background-color: rgb(213, 228, 254);
     cursor: pointer;
   }
 
   &:active {
-    background-color: $default;
+    background-color: rgb(194, 196, 198);
   }
 }
 
@@ -84,4 +98,158 @@ tr.active td div {
 
 .table--break {
   height: 8px;
+}
+
+//! ----------
+
+.wh-table tbody tr.expanded:not(:first-child, :last-child) {
+  transition: 0.25s;
+  border-top: solid 1px rgb(223, 225, 226);
+}
+
+//! ----------
+
+.table--button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: transparent;
+  width: 20px;
+  height: 20px;
+}
+
+.button--container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: fit-content;
+  align-self: flex-end;
+  padding: 5px;
+}
+
+.wh-table {
+  background-color: $light;
+}
+
+.wh-table {
+  background-color: $light;
+}
+
+.wh-table tbody {
+  border: none !important;
+}
+
+.wh-table td,
+th {
+  border-style: none;
+}
+
+.wh-table thead th {
+  background-color: $default;
+  font-weight: normal;
+  height: 44px;
+  vertical-align: middle;
+}
+
+.wh-table td {
+  background-color: #fff;
+}
+
+
+//KKADS RANDOM ::BERORE TAISA ATSTARPES
+// .wh-table tbody:before {
+//     content:".";
+//     background-color: $lighter;
+//     display:table-cell;
+//     line-height:8px;
+//     text-indent:-99999px;
+// }
+
+.wh-table th:first-child {
+  border-radius: 14px 0 0 14px;
+}
+
+.wh-table th:last-child {
+  border-radius: 0 14px 14px 0;
+}
+
+
+// KREISAIS AUGŠĒJAIS STŪRIS
+.wh-table tr:nth-child(1) td:first-child {
+  border-radius: 14px 0 0 0;
+}
+
+// LABAIS AUGŠĒJAIS STŪRIS
+.wh-table tr:nth-child(1) td:last-child {
+  border-radius: 0 14px 0 0; // 0 14px 0 0
+}
+
+// KREISAIS APAKŠĒJAIS STŪRIS
+.wh-table tr:last-child td:first-child {
+  border-radius: 0 0 0 14px;
+}
+
+// LABAIS APAKŠĒJAIS STŪRIS
+.wh-table tr:last-child td:last-child {
+  border-radius: 0 0 14px 0;
+}
+
+// //-------------------------------------------------------------------
+// EXPANDED TBODY STŪRI
+.wh-table tbody tr.expanded:first-child td:first-child {
+  border-radius: 14px 0 0 0;
+}
+
+.wh-table tbody tr.expanded:first-child td:last-child {
+  border-radius: 0 14px 0 0;
+}
+
+.wh-table tbody tr.expanded:last-of-type td:first-child {
+  border-radius: 0 0 0 14px;
+}
+
+.wh-table tbody tr.expanded:last-of-type td:last-child {
+  border-radius: 0 0 14px 0;
+}
+
+//NOT-EXPANDED TBODY STŪRI
+.wh-table tbody tr.not--expanded:first-child td:first-child {
+  border-radius: 14px 0 0 14px;
+  transition-delay: 0.25s;
+}
+
+.wh-table tbody tr.not--expanded:first-child td:last-child {
+  border-radius: 0 14px 14px 0;
+  transition-delay: 0.25s;
+}
+
+.wh-table tbody tr:last-of-type td:first-child {
+  border-radius: 0 0 0 14px;
+}
+
+.wh-table tbody tr:last-of-type td:last-child {
+  border-radius: 0 0 14px 0;
+
+}
+
+//-------------------------------------------------------------------
+
+
+// JA IR TIKAI VIENA RINDA
+.wh-table tr:only-child>td:first-child {
+  border-radius: 14px 0 0 14px;
+}
+
+.wh-table tr:only-child>td:last-child {
+  border-radius: 0 14px 14px 0;
+}
+
+.wh-table-hover>tbody>tr:hover td {
+  transition: .1s all ease-in-out;
+  background-color: $light;
+}
+
+h1 {
+  color: $dark;
 }

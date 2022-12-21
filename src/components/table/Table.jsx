@@ -2,32 +2,32 @@ import React from 'react';
 import LargeTableSlot from "./listItem/list_item.jsx";
 import "./table_style.scss";
 
- export function Table({ firstTitle, secondTitle, thirdTitle, fouthTitle, data }) {
+export function Table({ tHead, data, editClick, deleteClick }) {
   return (
     <div>
       <table className="wh-table table tbody">
         <thead>
-          <tr>
+          <tr className='tr--bold'>
             <th className="toggle">
               <span className="visually--hidden">Toggle</span>
             </th>
-            <th>
-              <div>{firstTitle}</div>
-            </th>
-            <th>
-              <div>{secondTitle}</div>
-            </th>
-            <th>
-              <div>{thirdTitle}</div>
-            </th>
-            <th>
-              <div>{fouthTitle}</div>
-            </th>
+            {tHead?.map((each) => (
+              <th >
+                <div>{each}</div>
+              </th>
+            ))}
+            <th></th>
           </tr>
         </thead>
         <div className="table--break" />
         {data?.length &&
-          data.map((each) => <LargeTableSlot details={each} />)}
+          data.map((each) => (
+            <LargeTableSlot
+              details={each}
+              editClick={editClick}
+              deleteClick={deleteClick}
+            />
+          ))}
       </table>
     </div>
   );

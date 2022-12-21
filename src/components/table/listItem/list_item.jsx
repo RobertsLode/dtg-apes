@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 
-function LargeTableSlot({ details }) {
+function LargeTableSlot({ details, editClick, deleteClick }) {
   const [visiblee, setVisiblee] = useState(false);
-  console.log(details);
 
   return (
     <>
       <tbody className="wh-table">
         <tr
-          onClick={() => {
-            setVisiblee(!visiblee);
-          }}
+
           className={`active tr--bold ${visiblee ? "expanded" : "not--expanded"
             }`}
         >
-          <td>
+          <td
+            onClick={() => {
+              setVisiblee(!visiblee);
+            }}>
             <span className="svg">
               <svg
                 style={visiblee ? { rotate: "90deg" } : {}}
@@ -26,36 +26,42 @@ function LargeTableSlot({ details }) {
               </svg>
             </span>
           </td>
-          <td>
-            <div className="tr--bold ">{details?.tableSlotFirstTitle}</div>
-          </td>
-          <td>
-            <div className="td--center tr--bold">
-              {details?.tableSlotSecondTitle}
+          {details?.tableSlotTitles?.map((each) => (
+            <td onClick={() => {
+              setVisiblee(!visiblee);
+            }}>
+              <div className="td--center tr--bold">{each}</div>
+            </td>
+          ))}
+          <td style={{ width: '100px' }}>
+            <div className="td--center button--container" style={{ gap: '20px' }}>
+              <button onClick={editClick} className="table--button">
+                <img width={20} height={20} src={Pencil} alt="pencil" />
+              </button>
+              <button onClick={deleteClick} className="table--button">
+                <img width={20} height={20} src={Trash} alt="pencil" />
+              </button>
             </div>
-          </td>
-          <td>
-            <div className="td--center tr--bold">{details?.tableSlotThirdTitle}</div>
-          </td>
-          <td>
-            <div className="td--center tr--bold">{details?.tableSlotFouthTitle}</div>
           </td>
         </tr>
 
-        {details?.details.map((el) => (
+        {details?.details?.map((el) => (
           <tr className={visiblee ? "active expanded" : "visually--hidden"}>
             <td></td>
-            <td>
-              <div className="td--center">{el?.firstP}</div>
-            </td>
-            <td>
-              <div className="td--center">{el?.secondP}</div>
-            </td>
-            <td>
-              <div className="td--center">{el?.thirdP}</div>
-            </td>
-            <td>
-              <div className="td--center">{el?.fourthP}</div>
+            {el?.map((each) => (
+              <td>
+                <div className="td--center">{each}</div>
+              </td>
+            ))}
+            <td style={{ width: '100px' }}>
+              <div className="td--center button--container" style={{ gap: '20px' }}>
+                <button onClick={editClick} className="table--button">
+                  <img width={20} height={20} src={Pencil} alt="pencil" />
+                </button>
+                <button onClick={deleteClick} className="table--button">
+                  <img width={20} height={20} src={Trash} alt="pencil" />
+                </button>
+              </div>
             </td>
           </tr>
         ))}
