@@ -24,8 +24,12 @@ export function Table({ tHead, data, editClick, deleteClick }) {
           data.map((each) => (
             <LargeTableSlot
               details={each}
-              editClick={editClick}
-              deleteClick={deleteClick}
+              editClick={(id) => {
+                editClick(id);
+              }}
+              deleteClick={(id) => {
+                deleteClick(id);
+              }}
             />
           ))}
       </table>
