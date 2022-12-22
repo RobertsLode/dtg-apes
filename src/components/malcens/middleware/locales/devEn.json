@@ -1,0 +1,8 @@
+{
+  "reactBootstrapCustomInputs": {
+    "global": {
+      "list": "List",
+      "textInput": "Text Input"
+    }
+  }
+}

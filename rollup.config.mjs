@@ -19,6 +19,10 @@ export default [
                 exports: 'named',
             }
         ],
+        onwarn(warning, warn) {
+            if (warning.code === 'THIS_IS_UNDEFINED') return;
+            warn(warning);
+        },
         plugins: [
             scss(),
             babel({
@@ -28,7 +32,26 @@ export default [
             external(),
             resolve(),
             terser(),
-            image()
-        ]
+            image(),
+            //! malcena
+            //     new webpack.IgnorePlugin({
+            //         resourceRegExp: /^\.\/locale$/,
+            //         contextRegExp: /moment$/,
+            //     }),
+        ],
+        external: ['prop-types', 'moment', 'classnames']
+        // module: {
+        //     rules: [
+        //         {
+        //             test: /\.(js|jsx)$/,
+        //             exclude: /(dist|node_modules|bower_components)/,
+        //             use: { loader: 'babel-loader' },
+        //         },
+        //         {
+        //             test: /\.(sa|sc|c)ss$/,
+        //             use: ['style-loader', 'css-loader', 'sass-loader'],
+        //         },
+        //     ],
+        // },
     }
 ]
