@@ -1,1 +1,3 @@
-export * from './Autocomplete.jsx';
+import Autocomplete from './Autocomplete.jsx';
+
+export default Autocomplete;
