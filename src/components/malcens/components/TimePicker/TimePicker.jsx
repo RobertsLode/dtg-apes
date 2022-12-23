@@ -1,7 +1,7 @@
 import { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import ClearButton from '../ClearButton/ClearButton.jsx';
+import { ClearButton } from '../ClearButton/ClearButton.jsx';
 import Hours from './components/Hours.jsx';
 import Minutes from './components/Minutes.jsx';
 import './styles.scss';

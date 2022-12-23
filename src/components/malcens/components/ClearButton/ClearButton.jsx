@@ -36,6 +36,6 @@ function ClearButton(props) {
 
 ClearButton.propTypes = propTypes;
 
-export default withTranslation()(ClearButton);
-// const test = withTranslation()(ClearButton);
-// export {test as asd}
+// export default withTranslation()(ClearButton);
+const test = withTranslation()(ClearButton);
+export { test as ClearButton }

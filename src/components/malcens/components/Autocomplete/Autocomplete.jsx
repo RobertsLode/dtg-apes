@@ -1,7 +1,7 @@
 import { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import ClearButton from '../ClearButton/ClearButton.jsx';
+import { ClearButton } from '../ClearButton/ClearButton.jsx';
 import MasterSelect from './components/MasterSelect.jsx';
 import Items from './components/Items.jsx';
 import './styles.scss';

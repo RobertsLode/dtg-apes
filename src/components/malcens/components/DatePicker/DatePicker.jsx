@@ -1,6 +1,6 @@
 import { faAngleLeft, faAngleRight, faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ClearButton from '../ClearButton/ClearButton.jsx';
+import { ClearButton } from '../ClearButton/ClearButton.jsx';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { Component, createRef } from 'react';

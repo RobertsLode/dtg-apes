@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
-import ClearButton from '../ClearButton/ClearButton.jsx';
+import { ClearButton } from '../ClearButton/ClearButton.jsx';
 import cn from 'classnames';
 import './styles.scss';
 import useDebounce from '../../hooks/useDebounce.jsx';
