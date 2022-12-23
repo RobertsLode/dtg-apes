@@ -1,3 +1,4 @@
+import React from 'react';
 import { faAngleLeft, faAngleRight, faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ClearButton } from '../ClearButton/ClearButton.jsx';
