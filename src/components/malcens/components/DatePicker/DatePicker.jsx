@@ -595,7 +595,7 @@ class DatePicker extends Component {
 DatePicker.propTypes = propTypes;
 DatePicker.defaultProps = defaultProps;
 
-// export default withTranslation()(DatePicker);
+export default withTranslation()(DatePicker);
 
-const test = withTranslation()(DatePicker);
-export { test as DatePicker };
+// const test = withTranslation()(DatePicker);
+// export { test as DatePicker };
