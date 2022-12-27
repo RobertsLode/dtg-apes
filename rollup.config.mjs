@@ -57,7 +57,7 @@ export default [
             //         contextRegExp: /moment$/,
             //     }),
         ],
-        external: ['prop-types', 'moment', 'classnames']
+        // external: ['prop-types', 'moment', 'classnames, bootstrap'],
         // module: {
         //     rules: [
         //         {
