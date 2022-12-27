@@ -1,1 +1,3 @@
-export * from './TextInput.jsx';
+import { TextInput } from "./TextInput.jsx";
+
+export { TextInput };

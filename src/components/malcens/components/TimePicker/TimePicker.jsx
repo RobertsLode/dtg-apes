@@ -1,3 +1,4 @@
+import React from 'react';
 import { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
@@ -622,4 +623,4 @@ class TimePicker extends Component {
 TimePicker.propTypes = propTypes;
 TimePicker.defaultProps = defaultProps;
 
-export default TimePicker;
+export { TimePicker };

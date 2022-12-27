@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
 import { ClearButton } from '../ClearButton/ClearButton.jsx';
@@ -83,4 +84,4 @@ function TextInput({
 TextInput.propTypes = propTypes;
 TextInput.defaultProps = defaultProps;
 
-export default TextInput;
+export { TextInput };

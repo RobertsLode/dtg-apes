@@ -1,3 +1,4 @@
+import React from 'react';
 import { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
@@ -655,4 +656,8 @@ class Autocomplete extends Component {
 Autocomplete.propTypes = propTypes;
 Autocomplete.defaultProps = defaultProps;
 
-export default withTranslation()(Autocomplete);
+// export default withTranslation()(Autocomplete);
+
+const autoCompleteWithTranslation = withTranslation()(Autocomplete);
+
+export { autoCompleteWithTranslation as Autocomplete }
