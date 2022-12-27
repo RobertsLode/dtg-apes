@@ -5,7 +5,7 @@ import '../../styles/main.scss';
 export function Table({ tHead, data, editClick, deleteClick }) {
   return (
     <div>
-      <table className="wh-table table tbody">
+      <table className="wh-table table tbody disabled">
         <thead>
           <tr className='tr--bold'>
             <th className="toggle">
