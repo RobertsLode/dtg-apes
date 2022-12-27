@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
 import { withTranslation } from 'react-i18next';

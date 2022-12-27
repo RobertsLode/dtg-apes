@@ -1,3 +1,4 @@
+import React from 'react';
 import 'bootstrap/scss/bootstrap.scss';
 import './middleware/i18nDev';
 import ReactDOM from 'react-dom';
