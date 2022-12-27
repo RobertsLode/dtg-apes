@@ -597,5 +597,5 @@ DatePicker.defaultProps = defaultProps;
 
 // export default withTranslation()(DatePicker);
 
-// const test = withTranslation()(DatePicker);
-export { DatePicker };
+const test = withTranslation()(DatePicker);
+export { test as DatePicker };
