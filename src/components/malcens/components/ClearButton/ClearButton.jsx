@@ -38,5 +38,5 @@ function ClearButton(props) {
 ClearButton.propTypes = propTypes;
 
 // export default withTranslation()(ClearButton);
-const test = withTranslation()(ClearButton);
+const test = withTranslation()(ClearButton); //! var nemt nost
 export { test as ClearButton }
