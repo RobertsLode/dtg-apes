@@ -26,12 +26,12 @@ export default [
             warn(warning);
         },
         plugins: [
-            // postcss({
-            //     extensions: ['.css', '.scss'],
-            // }),
-            scss({
+            postcss({
                 extensions: ['.css', '.scss'],
             }),
+            // scss({
+            //     extensions: ['.css', '.scss'],
+            // }),
             babel({
                 exclude: 'node_modules/**',
                 presets: ['@babel/preset-react'],
