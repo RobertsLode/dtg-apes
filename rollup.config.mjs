@@ -5,6 +5,7 @@ import scss from 'rollup-plugin-scss'
 import image from '@rollup/plugin-image';
 import { terser } from 'rollup-plugin-terser';
 import json from '@rollup/plugin-json';
+import postcss from 'rollup-plugin-postcss';
 
 export default [
     {
@@ -25,7 +26,12 @@ export default [
             warn(warning);
         },
         plugins: [
-            scss(),
+            // postcss({
+            //     extensions: ['.css', '.scss'],
+            // }),
+            scss({
+                extensions: ['.css', '.scss'],
+            }),
             babel({
                 exclude: 'node_modules/**',
                 presets: ['@babel/preset-react'],
