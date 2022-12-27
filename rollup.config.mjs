@@ -7,6 +7,11 @@ import { terser } from 'rollup-plugin-terser';
 import json from '@rollup/plugin-json';
 import postcss from 'rollup-plugin-postcss';
 
+import nested from 'postcss-nested'
+import simplevars from 'postcss-simple-vars'
+import cssnext from 'postcss-cssnext'
+import cssnano from 'cssnano'
+
 export default [
     {
         input: './src/index.js',
@@ -28,6 +33,11 @@ export default [
         plugins: [
             postcss({
                 extensions: ['.css', '.scss'],
+                plugins: [
+                    simplevars(),
+                    nested(),
+                    cssnext({ warnForDuplicates: false }),
+                    cssnano()],
             }),
             // scss({
             //     extensions: ['.css', '.scss'],
