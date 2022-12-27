@@ -4,6 +4,7 @@ import external from 'rollup-plugin-peer-deps-external';
 import scss from 'rollup-plugin-scss'
 import image from '@rollup/plugin-image';
 import { terser } from 'rollup-plugin-terser';
+import json from '@rollup/plugin-json';
 
 export default [
     {
@@ -33,6 +34,7 @@ export default [
             resolve(),
             terser(),
             image(),
+            json()
             //! malcena
             //     new webpack.IgnorePlugin({
             //         resourceRegExp: /^\.\/locale$/,
