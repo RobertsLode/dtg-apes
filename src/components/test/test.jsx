@@ -1,9 +1,12 @@
 import React from 'react';
 
-export const Test = () => {
+const Test = () => {
     return (
-    <div>
-        man besii
-    </div>
+        <div>
+            man besii
+        </div>
     )
 };
+
+const asd = Test;
+export { asd as Test };
