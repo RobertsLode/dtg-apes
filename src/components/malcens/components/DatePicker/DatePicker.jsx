@@ -8,6 +8,7 @@ import { Component, createRef } from 'react';
 import { withTranslation } from 'react-i18next';
 import { uuidv4 } from '../../helpers/idGenerators';
 import './styles.scss';
+import '../../../../styles/main.scss';
 
 const MONTHS = {
   1: 'january',

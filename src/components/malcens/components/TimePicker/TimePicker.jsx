@@ -6,6 +6,7 @@ import { ClearButton } from '../ClearButton/ClearButton.jsx';
 import Hours from './components/Hours.jsx';
 import Minutes from './components/Minutes.jsx';
 import './styles.scss';
+import '../../../../styles/main.scss';
 
 const HOURS_DEFAULT_SCROLL_TOP = 41 * 24;
 const HOURS_24H_FORMAT = [

@@ -6,6 +6,7 @@ import { ClearButton } from '../ClearButton/ClearButton.jsx';
 import MasterSelect from './components/MasterSelect.jsx';
 import Items from './components/Items.jsx';
 import './styles.scss';
+import '../../../../styles/main.scss';
 
 const DEFAULT_ITEM_RENDER_COUNT = 50;
 

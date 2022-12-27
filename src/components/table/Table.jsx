@@ -1,6 +1,6 @@
 import React from 'react';
 import LargeTableSlot from "./listItem/list_item.jsx";
-import "./table_style.scss";
+import '../../styles/main.scss';
 
 export function Table({ tHead, data, editClick, deleteClick }) {
   return (

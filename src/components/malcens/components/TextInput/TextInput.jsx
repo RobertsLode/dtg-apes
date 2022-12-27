@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { ClearButton } from '../ClearButton/ClearButton.jsx';
 import cn from 'classnames';
 import './styles.scss';
+import '../../../../styles/main.scss';
 import useDebounce from '../../hooks/useDebounce.jsx';
 
 const propTypes = {
