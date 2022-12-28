@@ -16,9 +16,7 @@ export function Table({ tHead, data, editClick, deleteClick }) {
                 <div>{each}</div>
               </th>
             ))}
-            <th className='toggle'>
-              <span className="visually--hidden">Toggle</span>
-            </th>
+            <th></th>
           </tr>
         </thead>
         <div className="table--break" />
