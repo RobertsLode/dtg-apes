@@ -12,8 +12,8 @@ export function Table({ tHead, data, editClick, deleteClick }) {
               <span className="visually--hidden">Toggle</span>
             </th>
             {tHead?.map((each) => (
-              <th className='td--center'>
-                <div>{each}</div>
+              <th>
+                <div className='td--center'>{each}</div>
               </th>
             ))}
             <th></th>
