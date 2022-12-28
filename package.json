@@ -1,6 +1,6 @@
 {
   "name": "dtg-apess",
-  "version": "1.0.58",
+  "version": "1.0.59",
   "description": "DTG packa",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
