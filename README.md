@@ -6,11 +6,11 @@ Table component structure:
 <br />
 ```
       <Table
-       data:{
+       data={
             [
                   {
                         tableSlotTotles: {
-                        id: String,
+                        id: id,
                         names: [
                                     {
                                           name: String
