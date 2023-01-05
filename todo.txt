@@ -1,4 +1,4 @@
 //todo tabula
     1. sataisīt scss --> random līnijas // dode
-    2. divas pogas --> edit un delete
+    2. divas pogas --> edit un delete // done
     3. tabulas labais border --> nav border radius // done

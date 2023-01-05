@@ -1,0 +1,189 @@
+.dtg-toast {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 50px;
+    max-height: 50px;
+    padding: 0;
+    border-radius: 6px;
+    opacity: 0.8;
+    bottom: -500px;
+    right: -500px;
+}
+
+.top-left {
+    top: 10%;
+    transition-duration: 1s;
+    left: -50%;
+    opacity: 0;
+}
+
+.top-left.show {
+    top: 10%;
+    left: 3%;
+    opacity: 1;
+}
+
+.top-right {
+    top: 10%;
+    transition-duration: 1s;
+    right: -50%;
+    opacity: 0;
+}
+
+.top-right.show {
+    top: 10%;
+    right: 3%;
+    opacity: 1;
+}
+
+.bottom-right {
+    bottom: 10%;
+    transition-duration: 1s;
+    right: -50%;
+    opacity: 0;
+}
+
+.bottom-right.show {
+    bottom: 10%;
+    right: 3%;
+    opacity: 1;
+}
+
+.bottom-left.show {
+    bottom: 10%;
+    left: 3%;
+    opacity: 1;
+}
+
+.bottom-left {
+    bottom: 10%;
+    transition-duration: 1s;
+    left: -50%;
+    opacity: 0;
+}
+
+.middle {
+    top: -50%;
+    left: 42%;
+    transition-duration: 1s;
+    opacity: 0;
+    // margin-left: -135.2px;
+}
+
+.middle.show {
+    opacity: 1;
+    top: 5%;
+    left: 42%;
+    // margin-left: -135.2px;
+}
+
+.toast--footer.success {
+    height: 7px;
+    width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #4caf50;
+}
+
+.toast--footer.danger {
+    height: 7px;
+    width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #f44336;
+}
+
+.toast--footer.warning {
+    height: 7px;
+    width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #ff9800;
+}
+
+.toast--footer.info {
+    height: 7px;
+    width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #2196f3;
+}
+
+.toast--footer.loaderr {
+    height: 7px;
+    width: 100%;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #E5C8C1;
+}
+
+.toast--footer.show {
+    width: 0%;
+    background-color: red;
+}
+
+.basic-toast-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12px;
+    border-radius: 6px;
+    border: 1px solid #000;
+    width: 100%;
+    min-height: 50px;
+    background-color: white;
+}
+
+.basic-toast-container button {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+
+
+.toast--text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+    padding: 12px 10px 12px 10px;
+}
+
+.toast--text-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    align-items: center;
+}
+
+.asd {
+    padding: 0px 10px 0px 10px;
+    width: 100%;
+}
+
+.loader {
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    font-size: 20px;
+
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
