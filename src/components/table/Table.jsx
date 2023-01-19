@@ -4,25 +4,26 @@ import '../../styles/main.scss';
 
 export function Table({ tHead, data, editClick, deleteClick }) {
   return (
-    <div>
-      <table className="wh-table dtg-table tbody disabled">
-        <thead>
-          <tr className='tr--bold'>
-            <th className="toggle">
-              <span className="visually--hidden">Toggle</span>
+    <div key={`0u89adsf`}>
+      <table key={`h09ysd165`} className="wh-table dtg-table tbody disabled">
+        <thead key={`0jawf`}>
+          <tr key={`h08efrg-i`} className='tr--bold'>
+            <th key={`9haev rf0-b`} className="toggle">
+              <span key={`dfvas0hi8`} className="visually--hidden">Toggle</span>
             </th>
-            {tHead?.map((each) => (
-              <th>
-                <div className='td--center'>{each}</div>
+            {tHead?.map((each, i) => (
+              <th key={`th ${i} 2r`}>
+                <div key={`div ${i} 3r`} className='td--center'>{each}</div>
               </th>
             ))}
             <th></th>
           </tr>
         </thead>
-        <div className="table--break" />
+        <thead key={`a0vsdyh`} className="table--break" />
         {data?.length &&
           data.map((each, i) => (
             <LargeTableSlot
+              key={i}
               details={each}
               editClick={(id) => {
                 editClick(id);
@@ -30,7 +31,7 @@ export function Table({ tHead, data, editClick, deleteClick }) {
               deleteClick={(id) => {
                 deleteClick(id);
               }}
-              key={i}
+              indexKey={i}
             />
           ))}
       </table>

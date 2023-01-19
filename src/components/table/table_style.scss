@@ -206,11 +206,11 @@ th {
   border-radius: 0 14px 0 0;
 }
 
-.wh-table tbody tr.expanded:last-of-type td:first-child {
+.wh-table tbody tr.expanded:nth-last-child(2) td:first-child {
   border-radius: 0 0 0 14px;
 }
 
-.wh-table tbody tr.expanded:last-of-type td:last-child {
+.wh-table tbody tr.expanded:nth-last-child(2) td:last-child {
   border-radius: 0 0 14px 0;
 }
 
