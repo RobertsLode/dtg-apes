@@ -21,7 +21,7 @@ export function Table({ tHead, data, editClick, deleteClick }) {
         </thead>
         <div className="table--break" />
         {data?.length &&
-          data.map((each) => (
+          data.map((each, i) => (
             <LargeTableSlot
               details={each}
               editClick={(id) => {
@@ -30,6 +30,7 @@ export function Table({ tHead, data, editClick, deleteClick }) {
               deleteClick={(id) => {
                 deleteClick(id);
               }}
+              key={i}
             />
           ))}
       </table>
