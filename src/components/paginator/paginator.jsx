@@ -85,7 +85,7 @@ class Paginator extends Component {
                         className="btn btn-dark"
                         name="prev"
                         title="Previous"
-                        disabled={buttonsDisabled || page === 1}
+                        disabled={buttonsDisabled || page && buttonsDisabled || page === 1}
                     >
                         <i className="fa fa-angle-left" />
                     </button>
@@ -103,7 +103,7 @@ class Paginator extends Component {
                         style={{ width: `${String(page).length + 3}ch` }}
                     />
                     <span className="input-group-text">
-                        {pageCount}
+                        {pageCount && pageCount}
                     </span>
                     <button
                         onClick={this.handlePageChange}
@@ -111,7 +111,7 @@ class Paginator extends Component {
                         className="btn btn-dark"
                         name="next"
                         title="Next"
-                        disabled={buttonsDisabled || page === pageCount}
+                        disabled={buttonsDisabled || page && buttonsDisabled || page === pageCount}
                     >
                         <i className="fa fa-angle-right" />
 
