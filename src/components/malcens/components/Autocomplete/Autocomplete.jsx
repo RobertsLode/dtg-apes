@@ -130,7 +130,7 @@ class Autocomplete extends Component {
       if (typeof a.sort === 'string' && typeof b.sort === 'string') {
         return (
           a.sort.localeCompare(b.sort)
-        );
+        );valueComparer
       }
 
       return a.sort - b.sort;
@@ -230,10 +230,12 @@ class Autocomplete extends Component {
   }
 
   valueComparer(a, b) {
-    if(this.props.toSort) {
-    return a.value.localeCompare(b.value);
+    console.log('props', this.props);
+    const { toSort } = this.props;
+    if(toSort) {
+      return a.value.localeCompare(b.value);
+    }
   }
-}
 
 
   // with debounce
