@@ -66,31 +66,8 @@ const defaultProps = {
 };
 
 class Autocomplete extends Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      inputRef: createRef(),
-      containerRef: createRef(),
-      areAllSelected: false,
-      items: [],
-      renderedItems: DEFAULT_ITEM_RENDER_COUNT,
-      visibleItemsCount: 0,
-      filter: '',
-      filterTimeout: null,
-      showContainer: false,
-      isValid: false,
-      isClearButtonVisible: false,
-    };
-
-    this.handleFilter = this.handleFilter.bind(this);
-    this.handleSelect = this.handleSelect.bind(this);
-    this.handleClear = this.handleClear.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleScrollView = this.handleScrollView.bind(this);
-    this.valueComparer = this.valueComparer.bind(this);
+  static valueComparer(a, b) {
+    return a.value.localeCompare(b.value);
   }
 
   static isImportantComparer(a, b) {
@@ -192,6 +169,31 @@ class Autocomplete extends Component {
     return { ...item, isVisible };
   }
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      inputRef: createRef(),
+      containerRef: createRef(),
+      areAllSelected: false,
+      items: [],
+      renderedItems: DEFAULT_ITEM_RENDER_COUNT,
+      visibleItemsCount: 0,
+      filter: '',
+      filterTimeout: null,
+      showContainer: false,
+      isValid: false,
+      isClearButtonVisible: false,
+    };
+
+    this.handleFilter = this.handleFilter.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
+    this.handleClear = this.handleClear.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleScrollView = this.handleScrollView.bind(this);
+  }
+
   componentDidMount() {
     this.initialize();
   }
@@ -228,15 +230,6 @@ class Autocomplete extends Component {
       this.initialize();
     }
   }
-
-  valueComparer(a, b) {
-    console.log('props', this.props);
-    const { toSort } = this.props;
-    if(toSort) {
-      return a.value.localeCompare(b.value);
-    }
-  }
-
 
   // with debounce
   handleFilter(e) {
@@ -340,14 +333,25 @@ class Autocomplete extends Component {
   handleFocus(e) {
     const { items, showContainer } = this.state;
     const { name } = e.target;
+    const { toSort } = this.props
 
     if (name === 'filter' && !showContainer) {
-      const refreshedItems = items.map((item) => Autocomplete.updateItemsIsVisible(item))
-        .sort(this.valueComparer)
+      let refreshedItems = [];
+      
+      if (toSort) {
+        refreshedItems = items.map((item) => Autocomplete.updateItemsIsVisible(item))
+        .sort(Autocomplete.valueComparer)
         .sort(Autocomplete.isImportantComparer)
         .sort(Autocomplete.customComparer)
         .sort(Autocomplete.isBackgroundComparer)
         .sort(Autocomplete.isSelectedComparer);
+      } else {
+        refreshedItems = items.map((item) => Autocomplete.updateItemsIsVisible(item))
+        .sort(Autocomplete.isImportantComparer)
+        .sort(Autocomplete.customComparer)
+        .sort(Autocomplete.isBackgroundComparer)
+        .sort(Autocomplete.isSelectedComparer);
+      }
 
       this.setState({
         items: refreshedItems,
@@ -464,7 +468,7 @@ class Autocomplete extends Component {
 
   filterItems() {
     const { items, filter } = this.state;
-
+    const { toSort } = this.props;
     const lowerCaseFilter = filter.toLowerCase();
 
     function updateVisible(arr = []) {
@@ -480,12 +484,36 @@ class Autocomplete extends Component {
 
         return updatedItem;
       })
-        .sort(this.valueComparer)
+        .sort(Autocomplete.valueComparer)
         .sort(Autocomplete.isVisibleComparer)
         .sort(Autocomplete.customComparer);
     }
 
-    const updatedItems = updateVisible(items);
+    function updateVisibleWithoutValueComparer(arr = []) {
+      return arr.map((item) => {
+        const { value, children } = item;
+        const lowerCaseItem = value.toLowerCase();
+
+        const updatedChildren = updateVisible(children);
+        const isVisible = lowerCaseItem.includes(lowerCaseFilter);
+        const updatedItem = { ...item, isVisible };
+
+        if (children) updatedItem.children = updatedChildren;
+
+        return updatedItem;
+      })
+        .sort(Autocomplete.isVisibleComparer)
+        .sort(Autocomplete.customComparer);
+    }
+
+    let updatedItems = [];
+
+    if( toSort ) {
+      updatedItems = updateVisible(items)
+    } else {
+      updatedItems = updateVisibleWithoutValueComparer(items)
+    }
+
     const visibleItemsCount = Autocomplete.getVisibleItemsCount(updatedItems);
 
     this.setState({ items: updatedItems, visibleItemsCount }, this.handleScrollView);
@@ -493,7 +521,7 @@ class Autocomplete extends Component {
 
   initialize() {
     const {
-      value, list, valid, i18n, language,
+      value, list, valid, i18n, language, toSort
     } = this.props;
     const { showContainer } = this.state;
 
@@ -536,9 +564,16 @@ class Autocomplete extends Component {
     const items = formatItems(list);
     const visibleItemsCount = Autocomplete.getVisibleItemsCount(items);
 
-    items.sort(this.valueComparer)
+    if(toSort) {
+
+      
+      items.sort(Autocomplete.valueComparer)
       .sort(Autocomplete.isImportantComparer)
       .sort(Autocomplete.customComparer);
+    } else {
+      items.sort(Autocomplete.isImportantComparer)
+      .sort(Autocomplete.customComparer);
+    }
 
     const isValid = valid === null
       ? (Array.isArray(value) || typeof value === 'string') && !!value.length
