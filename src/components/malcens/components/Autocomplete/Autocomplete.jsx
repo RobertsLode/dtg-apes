@@ -90,12 +90,7 @@ class Autocomplete extends Component {
     this.handleFocus = this.handleFocus.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.handleScrollView = this.handleScrollView.bind(this);
-  }
-
-  static valueComparer(a, b) {
-      if(this.props.toSort) {
-      return a.value.localeCompare(b.value);
-    }
+    this.valueComparer = this.valueComparer.bind(this);
   }
 
   static isImportantComparer(a, b) {
@@ -234,6 +229,13 @@ class Autocomplete extends Component {
     }
   }
 
+  valueComparer(a, b) {
+    if(this.props.toSort) {
+    return a.value.localeCompare(b.value);
+  }
+}
+
+
   // with debounce
   handleFilter(e) {
     const { debounce } = this.props;
@@ -339,7 +341,7 @@ class Autocomplete extends Component {
 
     if (name === 'filter' && !showContainer) {
       const refreshedItems = items.map((item) => Autocomplete.updateItemsIsVisible(item))
-        .sort(Autocomplete.valueComparer)
+        .sort(this.valueComparer)
         .sort(Autocomplete.isImportantComparer)
         .sort(Autocomplete.customComparer)
         .sort(Autocomplete.isBackgroundComparer)
@@ -476,7 +478,7 @@ class Autocomplete extends Component {
 
         return updatedItem;
       })
-        .sort(Autocomplete.valueComparer)
+        .sort(this.valueComparer)
         .sort(Autocomplete.isVisibleComparer)
         .sort(Autocomplete.customComparer);
     }
@@ -532,7 +534,7 @@ class Autocomplete extends Component {
     const items = formatItems(list);
     const visibleItemsCount = Autocomplete.getVisibleItemsCount(items);
 
-    items.sort(Autocomplete.valueComparer)
+    items.sort(this.valueComparer)
       .sort(Autocomplete.isImportantComparer)
       .sort(Autocomplete.customComparer);
 
