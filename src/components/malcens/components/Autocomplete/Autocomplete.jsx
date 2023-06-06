@@ -130,7 +130,7 @@ class Autocomplete extends Component {
       if (typeof a.sort === 'string' && typeof b.sort === 'string') {
         return (
           a.sort.localeCompare(b.sort)
-        );valueComparer
+        );
       }
 
       return a.sort - b.sort;
