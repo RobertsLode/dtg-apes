@@ -66,6 +66,32 @@ const defaultProps = {
 };
 
 class Autocomplete extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      inputRef: createRef(),
+      containerRef: createRef(),
+      areAllSelected: false,
+      items: [],
+      renderedItems: DEFAULT_ITEM_RENDER_COUNT,
+      visibleItemsCount: 0,
+      filter: '',
+      filterTimeout: null,
+      showContainer: false,
+      isValid: false,
+      isClearButtonVisible: false,
+    };
+
+    this.handleFilter = this.handleFilter.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
+    this.handleClear = this.handleClear.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleScrollView = this.handleScrollView.bind(this);
+  }
+
   static valueComparer(a, b) {
       if(this.props.toSort) {
       return a.value.localeCompare(b.value);
@@ -169,31 +195,6 @@ class Autocomplete extends Component {
       : true;
 
     return { ...item, isVisible };
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      inputRef: createRef(),
-      containerRef: createRef(),
-      areAllSelected: false,
-      items: [],
-      renderedItems: DEFAULT_ITEM_RENDER_COUNT,
-      visibleItemsCount: 0,
-      filter: '',
-      filterTimeout: null,
-      showContainer: false,
-      isValid: false,
-      isClearButtonVisible: false,
-    };
-
-    this.handleFilter = this.handleFilter.bind(this);
-    this.handleSelect = this.handleSelect.bind(this);
-    this.handleClear = this.handleClear.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
-    this.handleScrollView = this.handleScrollView.bind(this);
   }
 
   componentDidMount() {
