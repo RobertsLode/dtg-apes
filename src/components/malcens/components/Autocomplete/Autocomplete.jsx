@@ -33,6 +33,7 @@ const propTypes = {
   debounce: PropTypes.number,
   autoComplete: PropTypes.string,
   multiselect: PropTypes.bool,
+  toSort: PropTypes.bool,
   multiselectPreview: PropTypes.oneOfType([
     PropTypes.oneOf([
       'default',
@@ -61,11 +62,14 @@ const defaultProps = {
   disabled: false,
   valid: null,
   disableDeselect: false,
+  toSort: false,
 };
 
 class Autocomplete extends Component {
   static valueComparer(a, b) {
-    return a.value.localeCompare(b.value);
+      if(this.props.toSort) {
+      return a.value.localeCompare(b.value);
+    }
   }
 
   static isImportantComparer(a, b) {
@@ -551,12 +555,17 @@ class Autocomplete extends Component {
       const { t, multiselect, multiselectPreview } = this.props;
       const selectedItems = Autocomplete.extractSelected(items);
 
-      const value = selectedItems?.[0]?.value || '';
+      let value = selectedItems?.[0]?.value || '';
       const filter = (() => {
         if (multiselect) {
           const isNumericalMatch = typeof multiselectPreview === 'number' && selectedItems.length <= multiselectPreview;
 
           if (multiselectPreview === 'value' || isNumericalMatch) {
+            selectedItems.forEach((each, index) => {
+              if (index) {
+                value += ` ,${each?.value}`
+              }
+            })
             return value;
           }
 
